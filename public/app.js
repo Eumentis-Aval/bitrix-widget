@@ -66,14 +66,16 @@ BX24.init(() => {
       }
 
       // Send phone numbers to backend
-      const response = await fetch(
-        "https://your-backend.com/api/bland-ai/call",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ phoneNumbers }),
-        }
-      );
+      // const response = await fetch(
+      //   "https://your-backend.com/api/bland-ai/call",
+      //   {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify({ phoneNumbers }),
+      //   }
+      // );
+      alert(`Mock send to backend with numbers: ${phoneNumbers.join(", ")}`);
+      //
 
       if (!response.ok) throw new Error("Failed to send data to backend");
 
