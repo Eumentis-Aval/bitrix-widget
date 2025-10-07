@@ -3,31 +3,31 @@ BX24.init(() => {
   const startCallsBtn = document.getElementById("startCalls");
 
   // Fetch segments from Bitrix24
-  BX24.callMethod("crm.segment.list", {}, (result) => {
-    if (result.error()) {
-      alert(`Error fetching segments: ${result.error()}`);
-      segmentSelect.innerHTML =
-        '<option value="">Error loading segments</option>';
-      return;
-    }
+  // BX24.callMethod("crm.segment.list", {}, (result) => {
+  //   if (result.error()) {
+  //     alert(`Error fetching segments: ${result.error()}`);
+  //     segmentSelect.innerHTML =
+  //       '<option value="">Error loading segments</option>';
+  //     return;
+  //   }
 
-    const segments = result.data() || [];
-    if (segments.length === 0) {
-      segmentSelect.innerHTML = '<option value="">No segments found</option>';
-      return;
-    }
+  //   const segments = result.data() || [];
+  //   if (segments.length === 0) {
+  //     segmentSelect.innerHTML = '<option value="">No segments found</option>';
+  //     return;
+  //   }
 
-    // Populate select dropdown
-    segmentSelect.innerHTML = '<option value="">--Select Segment--</option>';
-    segments.forEach((seg) => {
-      const opt = document.createElement("option");
-      opt.value = seg.ID;
-      opt.textContent = seg.NAME;
-      segmentSelect.appendChild(opt);
-    });
+  //   // Populate select dropdown
+  //   segmentSelect.innerHTML = '<option value="">--Select Segment--</option>';
+  //   segments.forEach((seg) => {
+  //     const opt = document.createElement("option");
+  //     opt.value = seg.ID;
+  //     opt.textContent = seg.NAME;
+  //     segmentSelect.appendChild(opt);
+  //   });
 
-    startCallsBtn.disabled = false;
-  });
+  //   startCallsBtn.disabled = false;
+  // });
 
   // Handle bulk call button click
   startCallsBtn.addEventListener("click", async () => {
